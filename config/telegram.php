@@ -36,7 +36,8 @@ return [
             'username'            => 'TelegramBot',
             'token'               => env('TELEGRAM_BOT_TOKEN', '1143751427:AAF-RrVVvsvR_cC0tYxtUkdj-QHye8BLgJo'),
             'certificate_path'    => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
-            'webhook_url'         => env('TELEGRAM_WEBHOOK_URL', 'https://fe17cb232c78.ngrok.io/1143751427:AAF-RrVVvsvR_cC0tYxtUkdj-QHye8BLgJo/webhook'),
+            'webhook_url'         => env('TELEGRAM_WEBHOOK_URL', '1143751427:AAF-RrVVvsvR_cC0tYxtUkdj-QHye8BLgJo/webhook'),
+            'ngrok_url'             => env('TELEGRAM_NGROK_URL', 'https://fe17cb232c78.ngrok.io/'),
             'commands'            => [
                 App\Telegram\Commands\StartCommand::class,
                 App\Telegram\Commands\CharactersCommand::class,

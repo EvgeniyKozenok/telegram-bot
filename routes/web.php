@@ -13,13 +13,14 @@ use Telegram\Bot\Laravel\Facades\Telegram;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//dd(strpos('page=32', 'page=') === 0);
+
 Route::post('/' . Telegram::getBotConfig()['token'] . '/webhook', function () {
     app(App\Http\Controllers\Backend\TelegramController::class)->webhook();
 });
 
 Route::get('/', function () {
-    Telegram::setWebhook(['url' => Telegram::getBotConfig()['webhook_url']]);
-    $updates = Telegram::getWebhookUpdates();
-    dd($updates);
+    $config = Telegram::getBotConfig();
+    Telegram::setWebhook(['url' => $config['ngrok_url'] . $config['webhook_url']]);
+    Telegram::getWebhookUpdates();
+    echo 'ok';
 });
