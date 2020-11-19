@@ -57,6 +57,10 @@ abstract class TelegramBase
             $response['reply_markup'] = $replyMarkup;
         }
 
-        Telegram::sendMessage($response);
+        try {
+            Telegram::sendMessage($response);
+        } catch (\Exception $e) {
+            // todo to long
+        }
     }
 }
